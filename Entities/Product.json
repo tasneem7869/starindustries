@@ -1,0 +1,59 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "uniforms",
+        "shoes"
+      ],
+      "description": "Main category"
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Subcategory like automobile, pharmaceutical, etc."
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Product image URL"
+    },
+    "parts": {
+      "type": "array",
+      "description": "Parts of the uniform",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image_url": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Product features"
+    }
+  },
+  "required": [
+    "name",
+    "category"
+  ]
+}

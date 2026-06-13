@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
+
+@layer base {
+  html {
+    font-size: clamp(15px, 0.9rem + 0.4vw, 18px);
+  }
+}
+
+@layer components {
+.card-surface {
+  border: 1px solid rgba(201, 169, 98, 0.35);
+  box-shadow: 0 24px 45px -28px rgba(30, 58, 95, 0.5);
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+  /* Remove or modify will-change */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card-surface:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 169, 98, 0.6);
+  box-shadow: 0 32px 65px -32px rgba(45, 90, 143, 0.58);
+}
+}
